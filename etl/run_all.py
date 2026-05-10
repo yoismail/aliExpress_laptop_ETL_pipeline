@@ -14,31 +14,31 @@ def main():
     section("FULL PIPELINE START")
     logging.info("🚀 wipe → extract → transform → load\n")
 
-    # ── 1. Wipe old data ─────────────────────────────────────────────
+    # Wipe old data 
     section("WIPING OLD DATA")
     wipe("all")
 
-    # ── 2. Health check ──────────────────────────────────────────────
+    # Health check 
     section("HEALTH CHECK")
     if not test_response(ALIEXPRESS_URL):
         logging.error("❌ Site unreachable — aborting pipeline")
         return
 
-    # ── 3. Extract ───────────────────────────────────────────────────
+    # Extract 
     section("EXTRACT")
     raw_df = run_extract()
     if raw_df is None:
         logging.error("❌ Extraction failed — aborting pipeline")
         return
 
-    # ── 4. Transform — receives raw df directly ──────────────────────
+    # Transform — receives raw df directly 
     section("TRANSFORM")
     transformed_df = run_transform(df=raw_df)
     if transformed_df is None:
         logging.error("❌ Transform failed — aborting pipeline")
         return
 
-    # ── 5. Load — receives transformed df directly ───────────────────
+    # Load — receives transformed df directly 
     section("LOAD")
     success = run_load(df=transformed_df)
 
