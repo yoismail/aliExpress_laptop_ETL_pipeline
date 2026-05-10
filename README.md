@@ -1,4 +1,3 @@
-```markdown
 # 🛒 AliExpress Laptop ETL Pipeline
 *A production-grade web scraping and ETL pipeline built with Python, Selenium, BeautifulSoup, and PostgreSQL.*
 
@@ -242,9 +241,8 @@ I engineered a production-grade logging system designed for ETL pipelines runnin
 
 ## 👤 Author
 
-**Yomi Ismail**
+**Yomi Ismail**  
 Data Engineer
 
 [![GitHub](https://img.shields.io/badge/GitHub-yoismail-black?logo=github)](https://github.com/yoismail)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-yomi--ismail-blue?logo=linkedin)](https://www.linkedin.com/in/yomi-ismail/)
-```
