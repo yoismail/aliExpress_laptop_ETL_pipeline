@@ -186,7 +186,7 @@ def extract(query: str = "laptop", total_pages: int = 10) -> pd.DataFrame | None
 def main() -> pd.DataFrame | None:
     create_output_dir()
 
-    df = extract(query="laptop", total_pages=10)
+    df = extract(query="laptop", total_pages=60)
 
     if df is not None:
         df.to_csv(RAW_CSV, index=False)
