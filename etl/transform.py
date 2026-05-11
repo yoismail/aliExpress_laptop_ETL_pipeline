@@ -116,7 +116,8 @@ def main(df: pd.DataFrame = None) -> pd.DataFrame | None:
     # Accept df from run_all or load from CSV as fallback
     if df is None:
         if RAW_CSV.exists():
-            df = pd.read_csv(RAW_CSV)
+            df = pd.read_csv(RAW_CSV).copy()  # Avoid SettingWithCopyWarning
+
             logging.info(f"✅ Loaded raw data from {RAW_CSV}")
         else:
             logging.error("❌ No raw data available — run extract first")
