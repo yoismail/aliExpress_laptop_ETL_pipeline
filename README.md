@@ -32,7 +32,7 @@ This project reflects how I think as a data engineer:
 ## 🧠 What This Project Demonstrates
 
 ### 🔹 Web Scraping with Selenium and BeautifulSoup
-I built a real browser scraper that handles cookie banners, lazy loading, pagination, and bot detection avoidance across 10 pages of AliExpress listings.
+I built a real browser scraper that handles cookie banners, lazy loading, pagination, and bot detection avoidance across 60 pages of AliExpress listings.
 
 ### 🔹 End-to-End ETL Engineering
 A complete pipeline that scrapes, validates, transforms, and loads data into PostgreSQL — with each stage isolated and independently runnable.
@@ -55,7 +55,7 @@ AliExpress (Live)
       ↓
   scraper.py        — health check + browser setup
       ↓
-  extract.py        — scrapes 10 pages, returns raw DataFrame
+  extract.py        — scrapes 60 pages, returns raw DataFrame
       ↓
   transform.py      — cleans, enriches, validates data quality
       ↓
@@ -115,7 +115,7 @@ logs/
 `scraper.py` sends an HTTP request and opens a real Chrome browser to verify the site is reachable before scraping begins.
 
 ### 2️⃣ Extract
-`extract.py` scrapes 10 pages of AliExpress laptop listings using Selenium for navigation and BeautifulSoup for parsing. Returns a raw DataFrame with snake_case columns.
+`extract.py` scrapes 60 pages of AliExpress laptop listings using Selenium for navigation and BeautifulSoup for parsing. Returns a raw DataFrame with snake_case columns.
 
 ### 3️⃣ Transform
 `transform.py` cleans prices, removes duplicates, fills missing values with the median, engineers new features, and runs data quality checks before passing the DataFrame downstream.
